@@ -1,5 +1,8 @@
-class Parsing
+class Parser
+  attr_reader :data
 
-  def to_hash(log_data)
+  def initialize(filename = 'webserver.log')
+      @data = File.read(filename)
   end
+
 end
