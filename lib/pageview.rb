@@ -15,8 +15,8 @@ class PageView
   def print_summary(page_views)
     summary = []
     page_views.each do |k, v|
-      summary << k
-      summary << v.length
+      summary << [k, v.length]
+      summary.sort!.reverse!
       print "The '#{k}' page had #{v.length} views.\n"
     end
     return summary
