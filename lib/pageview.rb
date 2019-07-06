@@ -12,14 +12,18 @@ class PageView
     collection_of_urls = url.group_by { |urls| urls }
   end
 
-  def print_summary(page_views)
+  def summarize(url)
     summary = []
-    page_views.each do |k, v|
-      summary << [k, v.length]
-      summary.sort!.reverse!
-      print "The '#{k}' page had #{v.length} views.\n"
+    url.each do |name, nr|
+      summary << [name, nr.count]
     end
-    return summary
+    return summary.sort_by {|nr_of_views| nr_of_views[1]}.reverse
   end
 
-end
+  def print_pageview(views)
+  views.each do |name, nr_of_views|
+   print "The '#{name}' page had #{nr_of_views} views.\n"
+   end
+  end
+
+  end
