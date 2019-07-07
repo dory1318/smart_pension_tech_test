@@ -10,7 +10,7 @@ describe 'Summarize' do
      expect(sum.collect(data)).to eq("/home"=>["/home", "/home", "/home", "/home"], "/contact"=>["/contact"], "/about/2"=>["/about/2"])
    end
 
-   it 'prints the summary of page view' do
+   it 'returns the summary of pages' do
      sum = Summarize.new
      collection = sum.collect(data)
      expect(sum.summarize(collection)).to eq([["/home", 4], ["/contact", 1], ["/about/2", 1]])
