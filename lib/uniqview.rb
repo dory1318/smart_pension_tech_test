@@ -25,4 +25,10 @@ class UniqView
      return summary.sort_by {|nr_of_views| nr_of_views[1]}.reverse
    end
 
+   def print_uniq(view)
+     view.each do |k, v|
+       print "The '#{k}' page had #{v} unique views.\n"
+     end
+   end
+
  end
