@@ -11,4 +11,10 @@ class UniqView
      ip.keys
    end
 
+   def collect(urls)
+     url = []
+     urls.each { |urls| url << urls[:url].to_s }
+     collection_of_urls = url.group_by { |urls| urls }
+   end
+
  end
